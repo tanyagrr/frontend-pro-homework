@@ -1,1 +1,1 @@
-# js-pro-homework
+# frontend-pro-homework
