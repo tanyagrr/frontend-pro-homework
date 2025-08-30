@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        console.log("Primitive:");
+        
+        const num = 5;
+        console.log(typeof num);
+
+        const str = "Hello, world";
+        console.log(typeof str);
+
+        const bool = false;
+        console.log(typeof bool);
+
+        const nul = null;
+        console.log(typeof nul + " - this is null");
+
+        const undef = undefined;
+        console.log(typeof undef);
+
+        const bigInt = 2738213829n;
+        console.log(typeof bigInt);
+
+        const symb = Symbol(":)");
+        console.log(typeof symb);
+
+        console.log("Object:");
+
+        const arr = [];
+        console.log(typeof arr + " - this is an array");
+
+        const obj = {
+            name: "Tania", 
+            age: 22
+        };
+        console.log(typeof obj + " - this is an object");
+
+        const getSum = (num1, num2) => num1 + num2;
+        console.log(typeof getSum);
+    </script>
+</body>
+</html>
