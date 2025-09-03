@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const inp = prompt("Enter a three-digit number:");
+        
+        if (inp == +inp && inp.length === 3) {
+            if (inp[0] === inp[1] && inp[0] === inp[2] && inp[1] === inp[2]) {
+                alert("All digits are the same!");
+            } else if (inp[0] === inp[1] && inp[0] !== inp[2]) {
+                alert("The first and the second digits are the same!");
+            } else if (inp[0] === inp[2] && inp[0] !== inp[1]) {
+                alert("The first and the third digits are the same!");
+            } else if (inp[1] === inp[2] && inp[1] !== inp[0]) {
+                alert("The second and the third digits are the same!");
+            } else {
+                alert("None of the digits are the same!");
+            }
+        } else {
+            alert("Incorrect input");
+        };
+    </script>
+</body>
+</html>

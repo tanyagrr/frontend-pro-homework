@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const bday = +prompt("What year were you born?");
+        if (bday === true) {
+            alert(`Hi! You turn ${2025 - bday} this year!`);
+        } else {
+            alert("That's a pity you didn't want to enter your birth year.");
+        };
+
+        const city = prompt("What city do you live in?");
+        if (city === true) {
+            if (city === "London" || city === "london") {
+                alert("You live in the capital of the UK!");
+            } else if (city === "Warsaw" || city === "warsaw") {
+                alert("You lives in the capital of Poland!");
+            } else if (city === "Washington" || city === "washington") {
+                alert("You live in the capital of the US!");       
+            } else {
+                alert(`You live in ${city}!`);
+            };
+        } else {
+            alert("That's a pity you didn't want to enter your city.");
+        };
+
+        const champOne = "Christiano Ronaldo";
+        const champTwo = "LeBron James";
+        const champThree = "Gordie Howe";
+        const sport = prompt("What is your favorite sport?");
+        if (sport === true) {
+            if (sport.toLowerCase() === "football") {
+                alert(`Cool! You wanna be ${champOne}?`);
+            } else if (sport.toLowerCase() === "basketball") {
+                alert(`Cool! You wanna be ${champTwo}?`);
+            } else if (sport.toLowerCase() === "hockey") {
+                alert(`Cool! You wanna be ${champThree}?`);
+            } else {
+                alert(`Cool!`);
+            };
+        } else {
+            alert("That's a pity you didn't want to enter your favorite sport.");
+        };
+    </script>
+</body>
+</html>
