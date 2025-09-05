@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let n = +prompt("Enter an integer that is greater than 1:");
+        let result = 0;
+
+        if (Number.isInteger(n) === true && n > 1 && n !== 2) {
+            for (let i = 2; i < n; i++) {
+                result = n % i;
+                if (result === 0) {
+                    console.log("It's not a prime number!");
+                    break;
+                }
+            } 
+            if (result !== 0) {
+                console.log("It's a prime number!");
+            }
+        } else if (n === 2) {
+            console.log("It's a prime number!");
+        } else {
+            console.log("You should enter an integer that is greater than 1. Try again!")
+        };
+    </script>
+</body>
+</html>
