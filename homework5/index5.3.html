@@ -10,9 +10,11 @@
         let n = +prompt("Enter an integer:");
         let result = "";
 
-        if (Number.isInteger(n) === true) {
-            for (let i = 1; i * i <= n && i <= 100; i++) {
-                result = result + i + " ";
+        if (Number.isInteger(n)) {
+            for (let i = 1; i <= 100; i++) {
+                if (i * i <= n ) {
+                    result = result + i + " ";
+                }
             }
             console.log(result);
         } else {
