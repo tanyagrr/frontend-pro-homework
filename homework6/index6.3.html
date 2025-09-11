@@ -7,7 +7,33 @@
 </head>
 <body>
     <script>
-        
+        const contacts = {
+            list: [
+                {name: "Anna",
+                 number: "+380954782901",
+                 email: "anna333@gmail.com"}, 
+                {name: "Dmytro",
+                 number: "+380660983456",
+                 email: "dmytroho567@gmail.com"},
+                {name: "Alexander",
+                 number: "+380932786021",
+                 email: "alexcool02@gmail.com"}
+            ]
+        };
+
+        function nameToFind(contactName) {
+            const foundContact = contacts.list.find(contact => contact.name === contactName);
+            return foundContact;
+        };
+
+        console.log(nameToFind("Dmytro"));
+
+        function addContact(contactName, contactNumber, contactEmail) {
+            contacts.list.push({name: contactName, number: contactNumber, email: contactEmail});
+            return contacts;
+        };
+
+        console.log(addContact("John", "+12127849923", "johndoe123@gmail.com"));
     </script>
 </body>
 </html>
