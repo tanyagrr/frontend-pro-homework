@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const myArray = [3, 56, "yes", false];
+
+        function removeElement(array, item) {
+            if (!array.includes(item)) return "No such item";
+
+            const newArray = array.filter(element => element !== item);
+            return newArray;
+        }
+
+        console.log(removeElement(myArray, "yes"));
+    </script>
+</body>
+</html>

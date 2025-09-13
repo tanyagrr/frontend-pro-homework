@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let result = "";
+
+        function removeSymbols(string, symbols) {
+            const newString = string.toLowerCase();
+
+            for (let i = 0; i < newString.length; i++) {
+                if (!symbols.includes(newString[i])) {
+                    result = result + newString[i];
+                }
+            }
+            
+                return result;
+            }
+            
+        console.log(removeSymbols("I love JavaScript!", ["e", "j"]));
+    </script>
+</body>
+</html>
