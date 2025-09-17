@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /* function getNumber() {
+            let number = 0;
+            for (let i = 1; i <= 10; i++) {
+                let input = +prompt("Enter a number greater than 100:");
+                if (input <= 100) {
+                    prompt("Please, enter a number greater than 100:");
+                } 
+                number = input;
+            }
+            return number;
+        } */
+        
+        function getNumber() {
+            let number = 0;
+            for (let i = 1; i <= 10; i++) {
+                let input = +prompt("Enter a number greater than 100:");
+                if (input <=100 || isNaN(input)) {
+                    confirm("The number should be greater than 100.");
+                    continue;
+                }
+                number = input;
+            }
+            return number;
+        }
+
+        console.log(getNumber());
+    </script>
+</body>
+</html>
