@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let company = {
+            sales: [{name: "John", salary: 1000}, {name: "Alice", salary: 600}], 
+            development: {
+                web: [{name: "Peter", salary: 2000}, {name: "Alex", salary: 1800}],
+                internals: [{name: "Jack", salary: 1300}]
+            }
+        };
+
+        /* function getSumDev() {
+            let result = 0;
+            for (let subDep in company.development) {
+                for (let el of company.development[subDep]) {
+                    result += el.salary;
+                }
+            }
+            return result;
+        } */
+
+        function isPlainObject(value) {
+            return value !== null && typeof value === 'object' && value.constructor === Object;
+        }
+
+        function getSumCompany() {
+            debugger;
+            let result = 0;
+            for (let dep in company) {
+                if (isPlainObject(company[dep]) === true) {
+                    for (let subDep in company[dep]) {
+                        for (let el of company[dep][subDep]) {
+                            result += el.salary;
+                        }
+                    }
+                } else {
+                    for (let el of company[dep]) {
+                            result += el.salary;
+                        }
+                }
+            }
+            return result;
+        }
+
+        console.log(getSumCompany());
+    </script>
+</body>
+</html>
