@@ -15,22 +15,11 @@
             }
         };
 
-        /* function getSumDev() {
-            let result = 0;
-            for (let subDep in company.development) {
-                for (let el of company.development[subDep]) {
-                    result += el.salary;
-                }
-            }
-            return result;
-        } */
-
         function isPlainObject(value) {
             return value !== null && typeof value === 'object' && value.constructor === Object;
         }
 
         function getSumCompany() {
-            debugger;
             let result = 0;
             for (let dep in company) {
                 if (isPlainObject(company[dep]) === true) {
