@@ -11,7 +11,7 @@
             sales: [{name: "John", salary: 1000}, {name: "Alice", salary: 600}], 
             development: {
                 web: [{name: "Peter", salary: 2000}, {name: "Alex", salary: 1800}],
-                internals: [{name: "Jack", salary: 1300}]
+                internals: [{name: "Jack", salary: 1300}],
             }
         };
 
@@ -19,25 +19,44 @@
             return value !== null && typeof value === 'object' && value.constructor === Object;
         }
 
-        function getSumCompany() {
+        // solution 1
+        function getSumCompany(obj) {
             let result = 0;
-            for (let dep in company) {
-                if (isPlainObject(company[dep]) === true) {
-                    for (let subDep in company[dep]) {
-                        for (let el of company[dep][subDep]) {
+            for (let dep in obj) {
+                if (isPlainObject(obj[dep]) === true) {
+                    for (let subDep in obj[dep]) {
+                        for (let el of obj[dep][subDep]) {
                             result += el.salary;
                         }
                     }
                 } else {
-                    for (let el of company[dep]) {
+                    for (let el of obj[dep]) {
                             result += el.salary;
                         }
                 }
             }
             return result;
-        }
+        };
 
-        console.log(getSumCompany());
+        console.log(getSumCompany(company));
+
+        // solution 2
+        function getSumRecursion(obj) {
+            let sum = 0;
+            if (Array.isArray(obj)) {
+                for (let employee of obj) {
+                    sum += employee.salary;
+                }
+                return sum;
+            } else if (isPlainObject(obj) === true) {
+                for (let department in obj) {
+                    sum += getSumRecursion(obj[department])
+                }
+                return sum;
+            };
+        }; 
+
+        console.log(getSumRecursion(company));
     </script>
 </body>
 </html>
