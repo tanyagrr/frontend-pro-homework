@@ -1,0 +1,16 @@
+body {
+    display: flex;
+    gap: 3rem;
+    justify-content: center;
+    width: 100vw;
+}
+
+.link-getter, .link-follower {
+    margin-top: 15rem;
+    padding: .5rem 1rem;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}

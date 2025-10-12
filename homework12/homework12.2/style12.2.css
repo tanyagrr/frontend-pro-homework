@@ -1,0 +1,10 @@
+div {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    margin-top: 15rem;
+}
+
+.button {
+    padding: .5rem 1rem;
+}
