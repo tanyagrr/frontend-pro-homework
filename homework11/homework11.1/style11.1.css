@@ -1,0 +1,29 @@
+.rows {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    padding-left: 2rem;
+}
+
+.row {
+    display: flex;
+}
+
+.row.result {
+    gap: 2.2rem;
+}
+
+.row.numbers {
+    padding-left: 4.2rem;
+    gap: 2.2rem;
+}
+
+.number-horiz, .number-vert {
+    padding: .2rem;
+    border: 1px black solid;
+    width: 1.5rem;
+    text-align: center;
+}
+
+
+

@@ -1,0 +1,21 @@
+body {
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+}
+
+.pic {
+    width: 400px;
+    position: fixed;
+    margin: 10rem 0 0;
+    visibility: hidden;
+}
+
+.vert {
+    height: 350px;
+    object-fit: cover;
+}
+
+.show-pic {
+    visibility: visible;
+}

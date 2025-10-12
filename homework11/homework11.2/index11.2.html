@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style11.2.css">
+</head>
+<body>
+    <div class="container">
+        <h1 class="my-text">I love JavaScript!</h1>
+        <button class="my-button">click me</button>
+    </div>
+
+    <script>
+        const myButton = document.querySelector(".my-button");
+        const myText = document.querySelector(".my-text");
+
+        function handleClick(event) {
+            myText.classList.toggle("colorChange");
+        };
+
+        myButton.addEventListener("click", handleClick);
+    </script>
+</body>
+</html>
