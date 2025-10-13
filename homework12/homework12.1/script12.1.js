@@ -1,3 +1,18 @@
+// SOLUTION 1
+
+const buttonOne = document.querySelector(".link-getter");
+const buttonTwo = document.querySelector(".link-follower");
+
+let link = "";
+buttonOne.addEventListener("click", function() {
+    link = prompt("Enter your link:");
+    return link;
+});
+
+buttonTwo.addEventListener("click", () => location.href = `${link}`);
+
+/* SOLUTION 2
+
 const buttonOne = document.querySelector(".link-getter");
 const buttonTwo = document.querySelector(".link-follower");
 const anchor = document.querySelector("a");
@@ -11,4 +26,4 @@ buttonOne.addEventListener("click", function() {
 buttonTwo.addEventListener("click", function() {
     anchor.setAttribute("href", `${link}`);
     anchor.setAttribute("target", "_blank");
-});
+}); */
