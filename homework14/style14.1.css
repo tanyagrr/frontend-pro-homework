@@ -1,0 +1,74 @@
+.slider {
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+.slider.container {
+    top: 7rem;
+    left: 32rem;
+    gap: 1rem;
+}
+
+.slider.content {
+    width: 400px;
+    height: 300px;
+}
+
+.slide {
+    position: absolute;
+    width: 400px;
+    height: 300px;
+    text-align: center;
+    opacity: 0;
+    transition: opacity 1s ease;
+}
+
+.slide.one {
+    background-color: darkgoldenrod;
+}
+
+.slide.two {
+    background-color: darkcyan;
+}
+
+.slide.three {
+    background-color: firebrick;
+}
+
+.slide.active {
+    opacity: 1;
+}
+
+.button-prev, .button-next {
+    border-radius: 60%;
+    padding: .2rem .5rem;
+    background-color: beige;
+    cursor: pointer;
+}
+
+.button-prev:disabled, .button-next:disabled {
+    cursor: auto;
+}
+
+.dots {
+    position: relative;
+    top: 8rem;
+    text-align: center;
+}
+
+.dot {
+    background-color: rgb(149, 205, 255);
+    border-radius: 60%;
+    padding: .5rem;
+    cursor: pointer;
+}
+
+.dot.active-dot {
+    background-color: rgb(9, 140, 255);
+    padding: .7rem;
+}
+
+.dot:disabled {
+    cursor: auto;
+}
