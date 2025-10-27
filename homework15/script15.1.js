@@ -3,7 +3,7 @@ const taskInput = document.querySelector(".form__input");
 const taskWrapper = document.querySelector(".js--todos-wrapper");
 let tasks = [];
 
-function addTask(event) {
+function addTask() {
     if (taskInput.value.trim() === "") {
         return;
     }
