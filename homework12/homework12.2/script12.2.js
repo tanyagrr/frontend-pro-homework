@@ -1,5 +1,5 @@
 const container = document.querySelector(".container");
 
 container.addEventListener("click", function(event) {
-    alert(`${event.target.textContent} was clicked`);
+    if (event.target.tagName === "BUTTON") alert(`${event.target.textContent} was clicked`);
 })
