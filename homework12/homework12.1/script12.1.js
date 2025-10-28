@@ -9,7 +9,7 @@ buttonOne.addEventListener("click", function() {
     return link;
 });
 
-buttonTwo.addEventListener("click", () => location.href = `${link}`);
+buttonTwo.addEventListener("click", () => window.open(link));
 
 /* SOLUTION 2
 
