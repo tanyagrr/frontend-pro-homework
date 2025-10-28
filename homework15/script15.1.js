@@ -1,26 +1,120 @@
+// SOLUTION 2
+
 const addButton = document.querySelector(".form__btn");
 const taskInput = document.querySelector(".form__input");
 const taskWrapper = document.querySelector(".js--todos-wrapper");
 let tasks = [];
 
+function render() {
+  taskWrapper.innerHTML = "";
+
+  tasks.forEach((task, index) => {
+    const li = document.createElement("li");
+    li.classList.add("todo-item");
+
+    const checkbox = document.createElement("input");
+    checkbox.type = "checkbox";
+    checkbox.classList.add("checkbox");
+    checkbox.checked = task.checked;
+    checkbox.addEventListener("change", () => toggleTask(index));
+
+    const span = document.createElement("span");
+    span.textContent = task.text;
+    span.classList.add("todo-item__description");
+    if (task.checked) span.classList.add("todo-item--checked");
+
+    const del = document.createElement("button");
+    del.textContent = "Видалити";
+    del.classList.add("todo-item__delete");
+    del.addEventListener("click", () => deleteTask(index));
+
+    li.append(checkbox, span, del);
+    taskWrapper.appendChild(li);
+  });
+}
+
 function addTask() {
-    if (taskInput.value.trim() === "") {
-        return;
-    }
-    const newTask = document.createElement("li");
-    newTask.classList.add("todo-item");
-    const checkboxInput = document.createElement("input");
-    checkboxInput.setAttribute("type", "checkbox");
-    checkboxInput.classList.add("checkbox");
-    newTask.appendChild(checkboxInput);
-    const newTaskText = document.createElement("span");
-    newTaskText.textContent = taskInput.value;
-    newTaskText.classList.add("todo-item__description");
-    newTask.appendChild(newTaskText);
-    const deleteButton = document.createElement("button");
-    deleteButton.textContent = "Видалити";
-    deleteButton.classList.add("todo-item__delete");
-    newTask.appendChild(deleteButton);
+  const text = taskInput.value.trim();
+  if (!text) return;
+  tasks.push({ text, checked: false });
+  taskInput.value = "";
+  taskInput.focus();
+  saveTasks();
+  render();
+}
+
+function deleteTask(index) {
+  tasks.splice(index, 1);
+  saveTasks();
+  render();
+}
+
+function toggleTask(index) {
+  tasks[index].checked = !tasks[index].checked;
+  saveTasks();
+  render();
+}
+
+addButton.addEventListener("click", addTask);
+
+taskInput.addEventListener("keydown", event => {
+  if (event.key === "Enter") {
+    event.preventDefault();
+    addTask();
+  }
+});
+
+function saveTasks() {
+  localStorage.setItem("tasks", JSON.stringify(tasks));
+}
+
+function loadTasks() {
+  tasks = JSON.parse(localStorage.getItem("tasks")) || [];
+  render();
+}
+
+window.addEventListener("load", loadTasks);
+
+
+// SOLUTION 1
+
+/* const addButton = document.querySelector(".form__btn");
+const taskInput = document.querySelector(".form__input");
+const taskWrapper = document.querySelector(".js--todos-wrapper");
+let tasks = [];
+
+const createLi = () => {
+  const newTask = document.createElement("li");
+  newTask.classList.add("todo-item");
+  return newTask;
+}
+
+const createCheckbox = () => {
+  const checkboxInput = document.createElement("input");
+  checkboxInput.setAttribute("type", "checkbox");
+  checkboxInput.classList.add("checkbox");
+  return checkboxInput;
+}
+
+const createTaskText = () => {
+  const newTaskText = document.createElement("span");
+  newTaskText.textContent = taskInput.value;
+  newTaskText.classList.add("todo-item__description");
+  return newTaskText;
+}
+
+const createDeleteButton = () => {
+  const deleteButton = document.createElement("button");
+  deleteButton.textContent = "Видалити";
+  deleteButton.classList.add("todo-item__delete");
+  return deleteButton;
+}
+
+function addTask() {
+    if (taskInput.value.trim() === "") return;
+
+    const newTask = createLi();
+    newTask.append(createCheckbox(), createTaskText(), createDeleteButton());
     taskWrapper.appendChild(newTask);
     taskInput.value = "";
     taskInput.focus();
@@ -28,6 +122,7 @@ function addTask() {
 }
 
 addButton.addEventListener("click", addTask);
+
 taskInput.addEventListener("keydown", function(event) {
     if (event.key === "Enter") {
         event.preventDefault();
@@ -66,29 +161,21 @@ function saveTasks() {
 function loadTasks() {
     tasks = JSON.parse(localStorage.getItem('tasks')) || [];
     for (let task of tasks) {
-        const newTask = document.createElement("li");
-        newTask.classList.add("todo-item");
-        const checkboxInput = document.createElement("input");
-        checkboxInput.setAttribute("type", "checkbox");
+        const newTask = createLi();
+        const checkboxInput = createCheckbox();
         checkboxInput.checked = task.checked;
-        checkboxInput.classList.add("checkbox");
         newTask.appendChild(checkboxInput);
-        const newTaskText = document.createElement("span");
+        const newTaskText = createTaskText();
         newTaskText.textContent = task.text;
-        newTaskText.classList.add("todo-item__description");
         if (task.checked) {
             newTaskText.classList.add("todo-item--checked");
         }
         newTask.appendChild(newTaskText);
-        const deleteButton = document.createElement("button");
-        deleteButton.textContent = "Видалити";
-        deleteButton.classList.add("todo-item__delete");
-        newTask.appendChild(deleteButton);
+        newTask.appendChild(createDeleteButton());
         taskWrapper.appendChild(newTask);
         taskInput.value = "";
         taskInput.focus();
-        saveTasks();
     }
 }
 
-window.addEventListener("load", loadTasks);
+window.addEventListener("load", loadTasks); */
