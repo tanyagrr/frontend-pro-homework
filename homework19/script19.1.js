@@ -71,7 +71,7 @@ function renderWeather() {
     const temperatureSpan = document.querySelector(".temperature");
     temperatureSpan.textContent = `${temperature}°C`;
     const feelsLikeSpan = document.querySelector(".feels-like");
-    feelsLikeSpan.textContent = `${feelsLike}°C`;
+    feelsLikeSpan.textContent = `Feels like: ${feelsLike}°C`;
     const descriptionSpan = document.querySelector(".description");
     descriptionSpan.textContent = description;
     const iconSpan = document.querySelector(".icon");
