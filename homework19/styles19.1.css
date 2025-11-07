@@ -1,0 +1,75 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background-color: rgb(169, 205, 255);
+    font-family: "Segoe UI", Arial, sans-serif;
+}
+
+.widget-container {
+    background-color: rgb(35, 51, 168);
+    width: 35rem;
+    margin: 10rem auto 0;
+    border-radius: 10px;
+    display: flex;
+    justify-content: space-between;
+    padding: 1.5rem 3rem;
+}
+
+.widget {
+    color: antiquewhite;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.widget.right {
+    align-items: center;
+}
+
+.date {
+    font-size: 2rem;
+}
+
+.time {
+    font-size: 6rem;
+    margin-left: -.6rem;
+}
+
+.temperature {
+    font-size: 2rem;
+    margin-bottom: .5rem;
+}
+
+.description {
+    font-size: 1.8rem;
+    margin-bottom: .7rem;
+}
+
+.small-text {
+    font-size: 1.2rem;
+    margin-bottom: .5rem;
+}
+
+.feels-like {
+    margin-top: .5rem;
+    margin-bottom: .2rem;
+}
+
+.refresh {
+    margin-bottom: .5rem;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+}
+
+.refresh i {
+    width: 8rem;
+    color: antiquewhite; 
+    transition: color 0.3s ease;
+}
+
+.refresh i:active {
+  color: gray;
+}
