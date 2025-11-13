@@ -9,7 +9,7 @@ body {
 
 .widget-container {
     background-color: rgb(35, 51, 168);
-    width: 35rem;
+    width: 36rem;
     margin: 10rem auto 0;
     border-radius: 10px;
     display: flex;
@@ -25,7 +25,9 @@ body {
 }
 
 .widget.right {
+    display: flex;
     align-items: center;
+    
 }
 
 .date {
@@ -44,7 +46,8 @@ body {
 
 .description {
     font-size: 1.8rem;
-    margin-bottom: .7rem;
+    margin-bottom: .9rem;
+    text-align: center;
 }
 
 .small-text {

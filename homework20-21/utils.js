@@ -1,9 +1,9 @@
-const $addButton = $(".form__btn");
-const $taskInput = $(".form__input");
+export const $addButton = $(".form__btn");
+export const $taskInput = $(".form__input"); 
 const $taskWrapper = $(".js--todos-wrapper");
-let tasks = [];
+export let tasks = [];
 
-function render() {
+export function render() {
   $taskWrapper.empty();
 
   tasks.forEach((task, index) => {
@@ -36,16 +36,6 @@ function render() {
   });
 }
 
-function addTask() {
-  const text = $taskInput.val().trim();
-  if (!text) return;
-
-  tasks.push({ text, checked: false });
-  $taskInput.val("").focus();
-  saveTasks();
-  render();
-}
-
 function deleteTask(index) {
   tasks.splice(index, 1);
   saveTasks();
@@ -58,30 +48,19 @@ function toggleTask(index) {
   render();
 }
 
-function saveTasks() {
-  localStorage.setItem("tasks", JSON.stringify(tasks));
-}
-
-function loadTasks() {
-  tasks = JSON.parse(localStorage.getItem("tasks")) || [];
-  render();
-}
-
-$addButton.on("click", addTask);
-
-$taskInput.on("keydown", function (event) {
-  if (event.key === "Enter") {
-    event.preventDefault();
-    addTask();
-  }
-});
-
-$(window).on("load", loadTasks);
-
 function showTaskModal(text) {
   
   document.querySelector("#taskModal .modal-body").textContent = text;
 
   const modal = new bootstrap.Modal(document.getElementById("taskModal"));
   modal.show();
+}
+
+export function saveTasks() {
+  localStorage.setItem("tasks", JSON.stringify(tasks));
+}
+
+export function loadTasks() {
+  tasks = JSON.parse(localStorage.getItem("tasks")) || [];
+  render();
 }
