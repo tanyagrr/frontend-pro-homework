@@ -1,0 +1,62 @@
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+h1 {
+    font-size: 4rem;
+}
+
+h2 {
+    margin-top: 2rem;
+}
+
+.emojis {
+    display: flex;
+    gap: 3rem;
+}
+
+.emoji-wrapper {
+    display: flex;
+    align-items: baseline;
+}
+
+.emoji {
+    border: none;
+    background-color: white;
+    cursor: pointer;
+    font-size: 5rem;
+}
+
+.count {
+    font-size: 2rem;
+}
+
+.btn {
+    margin-top: 2rem;
+    background-color: aliceblue;
+    border-radius: 2rem;
+    padding: .5rem 1rem;
+    font-size: 1rem;
+    transition: background-color .5s ease-in;
+    cursor: pointer;
+}
+
+.btn:active {
+    background-color: rgb(179, 209, 209);
+}
+
+.result{
+    margin-top: -1.5rem;
+}
+
+.tie {
+    display: flex;
+    gap: 1.5rem;
+    margin-top: -1rem;
+}
