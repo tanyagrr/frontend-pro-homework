@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { useEffect } from "react";
 import "./App.css";
 import Emoji from "./Emoji.jsx";
 import Result from "./Result.jsx";
@@ -25,6 +26,7 @@ function App() {
   }, []);
 
   useEffect(() => {
+    if (!showResult) return;
     const data = { emojis, showResult, winner, tie };
     localStorage.setItem("result", JSON.stringify(data));
   }, [emojis, showResult, winner, tie]);
