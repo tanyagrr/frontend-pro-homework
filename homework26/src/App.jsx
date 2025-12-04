@@ -13,6 +13,22 @@ function App() {
   const [winner, setWinner] = useState(null);
   const [tie, setTie] = useState(false);
 
+  useEffect(() => {
+    const saved = localStorage.getItem("result");
+    if (saved) {
+      const parsed = JSON.parse(saved);
+      setEmojis(parsed.emojis);
+      setWinner(parsed.winner);
+      setTie(parsed.tie);
+      setShowResult(parsed.showResult);
+    }
+  }, []);
+
+  useEffect(() => {
+    const data = { emojis, showResult, winner, tie };
+    localStorage.setItem("result", JSON.stringify(data));
+  }, [emojis, showResult, winner, tie]);
+
   const handleClick = (id) => {
     setEmojis(
       emojis.map((el) => {
@@ -57,6 +73,8 @@ function App() {
     setShowResult(false);
     setWinner(null);
     setTie(false);
+
+    localStorage.removeItem("result");
   };
 
   return (
