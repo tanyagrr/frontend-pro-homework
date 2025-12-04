@@ -8,5 +8,7 @@ export default defineConfig({
     watch: {
       usePolling: true
     }
-  }
+  },
+  cacheDir: '.vite_cache'
 })
+
