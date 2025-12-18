@@ -1,0 +1,22 @@
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+
+.container {
+border: 2px solid rgba(221, 216, 216, 0.895);
+padding: 1rem 2rem;
+}
+
+.value {
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+.btn-container {
+  display: flex;
+  gap: .5rem;
+  justify-content: center;
+}
