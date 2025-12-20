@@ -6,7 +6,7 @@ function Form() {
         className="input-group mb-3 js--swapi_form"
       >
         <span className="input-group-text" id="basic-addon3">
-          https://swapi.dev/api/
+          https://swapi.info/api
         </span>
         <input
           type="text"
