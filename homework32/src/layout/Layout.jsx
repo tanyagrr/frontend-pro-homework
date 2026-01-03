@@ -1,0 +1,27 @@
+import { Box } from "@mui/material";
+import Header from "./Header";
+import Footer from "./Footer";
+
+function Layout({ children }) {
+  return (
+    <Box
+      sx={{
+        minHeight: "100vh",
+        display: "flex",
+        flexDirection: "column",
+        px: 6,
+        pt: 1,
+      }}
+    >
+      <Header />
+
+      <Box component="main" sx={{ flexGrow: 1 }}>
+        {children}
+      </Box>
+
+      <Footer />
+    </Box>
+  );
+}
+
+export default Layout;
