@@ -3,10 +3,8 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 import theme from "./theme/theme";
 import Layout from "./layout/Layout";
-import About from "./pages/About";
-import Skills from "./pages/Skills";
 import Project from "./pages/Project";
-import Education from "./pages/Education";
+import Home from "./pages/Home";
 
 function App() {
   return (
@@ -15,10 +13,8 @@ function App() {
       <BrowserRouter>
         <Layout>
           <Routes>
-            <Route path="/" element={<About />} />
-            <Route path="/skills" element={<Skills />} />
+            <Route path="/" element={<Home />} />
             <Route path="/projects/:id" element={<Project />} />
-            <Route path="/education" element={<Education />} />
           </Routes>
         </Layout>
       </BrowserRouter>

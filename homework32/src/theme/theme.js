@@ -5,8 +5,11 @@ const theme = createTheme({
     mode: "light",
 
     background: {
-      default: "#f7f5f2",   // milky background
+      default: "#faf9f6",   // milky background
       paper: "#ffffff",
+      section2: "#F3F1EC",
+      section3: "#EEECE6",
+      section4: "#E8E5DE"
     },
 
     text: {

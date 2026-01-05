@@ -9,7 +9,6 @@ function Layout({ children }) {
         minHeight: "100vh",
         display: "flex",
         flexDirection: "column",
-        px: 6,
         pt: 1,
       }}
     >
