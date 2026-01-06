@@ -12,7 +12,7 @@ function Home() {
   useEffect(() => {
     if (location.hash) {
       const id = location.hash.replace("#", "");
-      scrollToSection(id, 200);
+      scrollToSection(id);
     }
   }, [location]);
 
