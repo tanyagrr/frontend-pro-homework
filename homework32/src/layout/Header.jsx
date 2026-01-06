@@ -1,11 +1,20 @@
 import { AppBar, Toolbar, Button, Box, Divider } from "@mui/material";
-import { Link } from "react-router-dom";
-import Projects from "./ProjectsButton";
 import { scrollToSection } from "../helpers/scroll";
+import { useLocation, useNavigate } from "react-router-dom";
 
 export const headerHeight = 64;
 
 function Header() {
+  const location = useLocation();
+  const navigate = useNavigate();
+
+  const handleNavClick = (sectionId, offset = 64) => {
+    if (location.pathname === "/") {
+      scrollToSection(sectionId, offset);
+    } else {
+      navigate(`/#${sectionId}`);
+    }
+  };
   return (
     <AppBar
       position="sticky"
@@ -27,25 +36,30 @@ function Header() {
           <Box sx={{ display: "flex", gap: 2 }}>
             <Button
               sx={{ fontSize: ".9rem" }}
-              onClick={() => scrollToSection("about")}
+              onClick={() => handleNavClick("about")}
             >
               About me
             </Button>
             <Button
               sx={{ fontSize: ".9rem" }}
-              onClick={() => scrollToSection("skills", 200)}
+              onClick={() => handleNavClick("skills", 190)}
             >
               Skills
             </Button>
             <Button
               sx={{ fontSize: ".9rem" }}
-              onClick={() => scrollToSection("education")}
+              onClick={() => handleNavClick("education")}
             >
               Education
             </Button>
           </Box>
           <Box>
-            <Projects />
+            <Button
+              sx={{ fontSize: ".9rem" }}
+              onClick={() => handleNavClick("projects")}
+            >
+              Projects
+            </Button>
           </Box>
         </Toolbar>
         <Divider />

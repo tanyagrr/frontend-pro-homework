@@ -17,7 +17,7 @@ function Skills() {
     <Box
       component="section"
       id="skills"
-      sx={{ backgroundColor: "background.section2", width: "100%", py: 7 }}
+      sx={{ backgroundColor: "background.section2", width: "100%", py: 8 }}
     >
       <Container
         maxWidth="md"
@@ -29,7 +29,7 @@ function Skills() {
           justifyContent: "center",
         }}
       >
-        <Typography variant="h4" align="center" sx={{ mb: 5, fontWeight: 600 }}>
+        <Typography variant="h4" align="center" sx={{ mb: 6, fontWeight: 600 }}>
           Skills
         </Typography>
         <Stack

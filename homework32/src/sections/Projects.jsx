@@ -4,24 +4,56 @@ import {
   Card,
   CardActions,
   CardContent,
+  CardMedia,
+  Chip,
   Container,
   Grid,
+  Stack,
   Typography,
 } from "@mui/material";
 import { Link } from "react-router-dom";
+import todos1 from "../assets/projects/todos/todos1.png";
+// import todos2 from "../assets/projects/todos/todos2.png";
+import swapi from "../assets/projects/swapi/swapi.png";
 
 export const projects = [
   {
     id: "todo-app",
     title: "Todo App",
     short: "Task manager with Redux Toolkit",
-    stack: ["React", "Redux", "MUI"],
+    long: `  A full-featured task management application built with React and Redux Saga.
+          The app allows users to create, edit, complete, and delete tasks with a smooth
+          and responsive UI.
+
+            State management is handled using Redux, while Redux Saga is used to manage
+          asynchronous logic and side effects, ensuring a clear separation between UI
+          and business logic. The project demonstrates practical use of scalable state
+          architecture, clean component structure, and predictable data flow.
+          `,
+    stack: ["React", "Redux"],
+    screenshots: [todos1],
+    demo: "https://todo-app-with-redux-saga.vercel.app/",
+    github:
+      "https://github.com/tanyagrr/frontend-pro-homework/tree/main/homework31",
   },
   {
     id: "swapi",
     title: "SWAPI Viewer",
     short: "Star Wars API explorer",
+    long: `
+          An interactive application for exploring data from the Star Wars API (SWAPI),
+          built with React and Redux Thunk. Users can browse and view detailed information
+          about characters fetched from a public REST API.
+
+          Redux Thunk is used to handle asynchronous API requests and manage loading and
+          error states. This project focuses on API integration, async data handling,
+          and building a responsive UI that reacts to changing application state.
+          `,
     stack: ["React", "REST API"],
+    screenshots: [swapi],
+    demo: "https://swapi-with-redux-thunk.vercel.app/",
+    github:
+      "https://github.com/tanyagrr/frontend-pro-homework/tree/main/homework30",
   },
 ];
 
@@ -30,22 +62,54 @@ function Projects() {
     <Box
       component="section"
       id="projects"
-      sx={{ width: "100%", bgcolor: "background.section3", py: 15 }}
+      sx={{ width: "100%", bgcolor: "background.section3", py: 10 }}
     >
       <Container maxWidth="lg">
-        <Grid container spacing={4}>
+        <Typography variant="h4" align="center" sx={{ mb: 6, fontWeight: 600 }}>
+          Projects
+        </Typography>
+        <Grid container spacing={4} justifyContent="center">
           {projects.map((project) => (
             <Grid key={project.id}>
-              <Card>
-                <CardContent>
-                  <Typography sx={{ fontWeight: 600 }} variant="h5">
+              <Card
+                sx={{
+                  width: 340,
+                  height: 360,
+                  display: "flex",
+                  flexDirection: "column",
+                }}
+              >
+                <CardMedia
+                  component="img"
+                  height="180"
+                  image={project.screenshots[0]}
+                  alt={project.title}
+                />
+                <CardContent sx={{ flexGrow: 1 }}>
+                  <Typography
+                    sx={{ fontWeight: 600 }}
+                    variant="h5"
+                    gutterBottom
+                  >
                     {project.title}
                   </Typography>
-                  <Typography variant="body2">{project.short}</Typography>
+                  <Typography color="text.secondary" variant="body2">
+                    {project.short}
+                  </Typography>
+
+                  <Stack direction="row" spacing={1} mt={2} flexWrap="wrap">
+                    {project.stack.map((tech) => (
+                      <Chip key={tech} label={tech} size="small" />
+                    ))}
+                  </Stack>
                 </CardContent>
 
-                <CardActions>
-                  <Button component={Link} to={`/projects/${project.id}`}>
+                <CardActions sx={{ width: "100%" }}>
+                  <Button
+                    component={Link}
+                    to={`/projects/${project.id}`}
+                    sx={{ mx: "auto" }}
+                  >
                     View project
                   </Button>
                 </CardActions>

@@ -38,7 +38,13 @@ function About() {
             intensive coursework and built multiple projects demonstrating
             proficiency in DOM manipulation, API integration, and responsive
             design. Eager to apply technical skills and problem solving
-            abilities to contribute to a development team.
+            abilities to contribute to a development team.Motivated junior
+            frontend developer with comprehensive training in JavaScript, React,
+            and modern web development practices. Completed intensive coursework
+            and built multiple projects demonstrating proficiency in DOM
+            manipulation, API integration, and responsive design. Eager to apply
+            technical skills and problem solving abilities to contribute to a
+            development team.
           </Typography>
         </Stack>
       </Container>
