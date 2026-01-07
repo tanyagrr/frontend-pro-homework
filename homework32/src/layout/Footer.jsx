@@ -14,7 +14,7 @@ function Footer() {
         bgcolor: "background.footer",
         color: "text.footer",
         pt: 8,
-        pb: 6,
+        pb: 4,
       }}
     >
       <Container maxWidth="md">

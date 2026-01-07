@@ -16,7 +16,7 @@ const themes = {
 };
 
 function App() {
-  const [themeName, setThemeName] = useState("light");
+  const [themeName, setThemeName] = useState("green");
 
   return (
     <ThemeProvider theme={themes[themeName]}>

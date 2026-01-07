@@ -11,6 +11,7 @@ import {
 } from "@mui/material";
 import { useNavigate } from "react-router-dom";
 import ArrowBackIosNewIcon from "@mui/icons-material/ArrowBackIosNew";
+import { headerHeight } from "../layout/Header";
 
 function Project() {
   const { id } = useParams();
@@ -27,7 +28,10 @@ function Project() {
 
   return (
     <Box component="section" sx={{ py: 3 }}>
-      <Container maxWidth="lg">
+      <Container
+        maxWidth="lg"
+        sx={{ minHeight: `calc(90vh - ${headerHeight}px)` }}
+      >
         <Button
           startIcon={<ArrowBackIosNewIcon />}
           onClick={() => navigate("/#projects")}
@@ -42,7 +46,6 @@ function Project() {
           Back to projects
         </Button>
         <Grid container spacing={6} alignItems="center">
-          {/* LEFT COLUMN – screenshots */}
           <Grid size={{ xs: 12, md: 7 }}>
             <Stack spacing={3}>
               {project.screenshots.map((src, index) => (
@@ -61,7 +64,6 @@ function Project() {
             </Stack>
           </Grid>
 
-          {/* RIGHT COLUMN – content */}
           <Grid size={{ xs: 12, md: 5 }}>
             <Typography variant="h2" sx={{ fontWeight: 600, mb: 2 }}>
               {project.title}

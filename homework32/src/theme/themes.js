@@ -36,13 +36,17 @@ export const lightTheme = createTheme({
       section2: "#f5f5f5",
       section3: "#f0f0f0",
       section4: "#ededed",
-      footer: "#3b2f2a",
+      footer: "#3b2f2a"
     },
     text: {
       primary: "#1f1f1f",
       secondary: "#555",
       footer: "#f5f1ee",
     },
+    primary: {
+      main: "#1f1f1f",
+      contrastText: "#ffffff",
+ },
   },
 });
 
@@ -52,17 +56,21 @@ export const darkTheme = createTheme({
     mode: "dark",
     background: {
       default: "#121212",
-      paper: "#1a1a1a",
+      paper: "#111111",
       section2: "#161616",
       section3: "#1c1c1c",
       section4: "#202020",
-      footer: "#0f0f0f",
+      footer: "#ededed",
     },
     text: {
       primary: "#f2f2f2",
       secondary: "#b5b5b5",
-      footer: "#d9d9d9",
+      footer: "#1c1c1c",
     },
+    primary: {
+      main: "#f2f2f2",
+      contrastText: "#121212",
+ },
   },
 });
 
@@ -83,6 +91,10 @@ export const greenTheme = createTheme({
       secondary: "#556b5f",
       footer: "#e6efe9",
     },
+    primary: {
+      main: "#2f3e34",
+      contrastText: "#ffffff",
+   },
   },
 });
 
