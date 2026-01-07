@@ -1,5 +1,5 @@
 import { useParams } from "react-router-dom";
-import { projectsMap } from "../data/projects";
+import { projectsMap } from "../data/projectsMap";
 import {
   Box,
   Chip,

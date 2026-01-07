@@ -7,7 +7,11 @@ function About() {
     <Box
       component="section"
       id="about"
-      sx={{ backgroundColor: "background.default", width: "100%" }}
+      sx={{
+        backgroundColor: "background.default",
+        width: "100%",
+        scrollMarginTop: `${headerHeight}px`,
+      }}
     >
       <Container
         maxWidth="md"

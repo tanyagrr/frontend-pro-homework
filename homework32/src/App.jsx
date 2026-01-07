@@ -1,15 +1,25 @@
 import { ThemeProvider, CssBaseline } from "@mui/material";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
-import theme from "./theme/theme";
+import { lightTheme, darkTheme, greenTheme } from "./theme/themes";
+import ThemeSwitcher from "./theme/ThemeSwitcher";
 import Layout from "./layout/Layout";
 import Project from "./pages/Project";
 import Home from "./pages/Home";
 import ScrollToTop from "./helpers/ScrollToTop";
+import { useState } from "react";
+
+const themes = {
+  light: lightTheme,
+  dark: darkTheme,
+  green: greenTheme,
+};
 
 function App() {
+  const [themeName, setThemeName] = useState("light");
+
   return (
-    <ThemeProvider theme={theme}>
+    <ThemeProvider theme={themes[themeName]}>
       <CssBaseline />
       <BrowserRouter>
         <ScrollToTop />
@@ -19,6 +29,7 @@ function App() {
             <Route path="/projects/:id" element={<Project />} />
           </Routes>
         </Layout>
+        <ThemeSwitcher value={themeName} onChange={setThemeName} />
       </BrowserRouter>
     </ThemeProvider>
   );

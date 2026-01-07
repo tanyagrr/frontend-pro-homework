@@ -20,8 +20,8 @@ function Home() {
     <>
       <About />
       <Skills />
-      <Projects />
       <Education />
+      <Projects />
     </>
   );
 }

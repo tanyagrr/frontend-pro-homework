@@ -8,9 +8,9 @@ function Header() {
   const location = useLocation();
   const navigate = useNavigate();
 
-  const handleNavClick = (sectionId, offset = 64) => {
+  const handleNavClick = (sectionId) => {
     if (location.pathname === "/") {
-      scrollToSection(sectionId, offset);
+      scrollToSection(sectionId);
     } else {
       navigate(`/#${sectionId}`);
     }
@@ -35,30 +35,36 @@ function Header() {
         <Toolbar sx={{ justifyContent: "space-between" }}>
           <Box sx={{ display: "flex", gap: 2 }}>
             <Button
-              sx={{ fontSize: ".9rem" }}
+              sx={{ fontSize: ".9rem", color: "text.primary" }}
               onClick={() => handleNavClick("about")}
             >
               About me
             </Button>
             <Button
-              sx={{ fontSize: ".9rem" }}
+              sx={{ fontSize: ".9rem", color: "text.primary" }}
               onClick={() => handleNavClick("skills", 190)}
             >
               Skills
             </Button>
             <Button
-              sx={{ fontSize: ".9rem" }}
+              sx={{ fontSize: ".9rem", color: "text.primary" }}
               onClick={() => handleNavClick("education")}
             >
               Education
             </Button>
           </Box>
-          <Box>
+          <Box sx={{ display: "flex", gap: 2 }}>
             <Button
-              sx={{ fontSize: ".9rem" }}
+              sx={{ fontSize: ".9rem", color: "text.primary" }}
               onClick={() => handleNavClick("projects")}
             >
               Projects
+            </Button>
+            <Button
+              sx={{ fontSize: ".9rem", color: "text.primary" }}
+              onClick={() => handleNavClick("contact")}
+            >
+              Contact me
             </Button>
           </Box>
         </Toolbar>

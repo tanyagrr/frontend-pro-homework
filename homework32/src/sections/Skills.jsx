@@ -17,7 +17,11 @@ function Skills() {
     <Box
       component="section"
       id="skills"
-      sx={{ backgroundColor: "background.section2", width: "100%", py: 8 }}
+      sx={{
+        backgroundColor: "background.section2",
+        width: "100%",
+        py: 8,
+      }}
     >
       <Container
         maxWidth="md"

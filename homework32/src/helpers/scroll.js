@@ -1,11 +1,12 @@
-export const scrollToSection = (id, offset = 64) => {
+export const scrollToSection = (id) => {
   const el = document.getElementById(id);
   if (!el) return;
 
-  const y =
-    el.getBoundingClientRect().top +
-    window.pageYOffset -
-    offset;
+  const block =
+    id === "skills" ? "center" : "start";
 
-  window.scrollTo({ top: y, behavior: "smooth" });
+  el.scrollIntoView({
+    behavior: "smooth",
+    block,
+  });
 };
