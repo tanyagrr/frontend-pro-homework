@@ -37,6 +37,7 @@ function Skills() {
           flexDirection: "column",
           alignItems: "center",
           justifyContent: "center",
+          py: { xs: 10 },
         }}
       >
         <Typography variant="h4" align="center" sx={{ mb: 6, fontWeight: 600 }}>
