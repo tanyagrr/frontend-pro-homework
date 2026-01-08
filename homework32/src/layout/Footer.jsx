@@ -40,7 +40,7 @@ function Footer() {
               href="tel:+380957062171"
               aria-label="Phone"
               color="inherit"
-              sx={{ "&:hover": { color: "#d7c4b6" } }}
+              sx={{ "&:hover": { color: "text.secondary" } }}
             >
               <PhoneIcon />
             </IconButton>
@@ -49,7 +49,7 @@ function Footer() {
               href="mailto:tetiana.herasymenko22@gmail.com"
               aria-label="Email"
               color="inherit"
-              sx={{ "&:hover": { color: "#d7c4b6" } }}
+              sx={{ "&:hover": { color: "text.secondary" } }}
             >
               <EmailIcon />
             </IconButton>
@@ -59,7 +59,7 @@ function Footer() {
               target="_blank"
               aria-label="LinkedIn"
               color="inherit"
-              sx={{ "&:hover": { color: "#d7c4b6" } }}
+              sx={{ "&:hover": { color: "text.secondary" } }}
             >
               <LinkedInIcon />
             </IconButton>
@@ -69,7 +69,7 @@ function Footer() {
               target="_blank"
               aria-label="GitHub"
               color="inherit"
-              sx={{ "&:hover": { color: "#d7c4b6" } }}
+              sx={{ "&:hover": { color: "text.secondary" } }}
             >
               <GitHubIcon />
             </IconButton>
@@ -79,7 +79,7 @@ function Footer() {
               target="_blank"
               aria-label="Telegram"
               color="inherit"
-              sx={{ "&:hover": { color: "#d7c4b6" } }}
+              sx={{ "&:hover": { color: "text.secondary" } }}
             >
               <TelegramIcon />
             </IconButton>

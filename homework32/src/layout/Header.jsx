@@ -1,20 +1,40 @@
-import { AppBar, Toolbar, Button, Box, Divider } from "@mui/material";
 import { scrollToSection } from "../helpers/scroll";
-import { useLocation, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
+import {
+  AppBar,
+  Toolbar,
+  Button,
+  Box,
+  Divider,
+  IconButton,
+  Menu,
+  MenuItem,
+} from "@mui/material";
+import MenuIcon from "@mui/icons-material/Menu";
+import { useTheme, useMediaQuery } from "@mui/material";
+import { useState } from "react";
 
 export const headerHeight = 64;
 
 function Header() {
-  const location = useLocation();
+  const theme = useTheme();
+  const isMobile = useMediaQuery(theme.breakpoints.down("md"));
+  const [menuAnchor, setMenuAnchor] = useState(null);
+
   const navigate = useNavigate();
 
   const handleNavClick = (sectionId) => {
-    if (location.pathname === "/") {
+    const el = document.getElementById(sectionId);
+
+    if (el) {
+      window.history.replaceState(null, "", `#${sectionId}`);
       scrollToSection(sectionId);
-    } else {
-      navigate(`/#${sectionId}`);
+      return;
     }
+
+    navigate(`/#${sectionId}`);
   };
+
   return (
     <AppBar
       position="sticky"
@@ -32,8 +52,23 @@ function Header() {
           mx: "auto",
         }}
       >
-        <Toolbar sx={{ justifyContent: "space-between" }}>
-          <Box sx={{ display: "flex", gap: 2 }}>
+        <Toolbar sx={{ justifyContent: "space-between", px: { xs: 1, sm: 2 } }}>
+          {isMobile && (
+            <IconButton
+              edge="end"
+              onClick={(e) => setMenuAnchor(e.currentTarget)}
+              sx={{ color: "text.primary" }}
+            >
+              <MenuIcon />
+            </IconButton>
+          )}
+
+          <Box
+            sx={{
+              display: { xs: "none", md: "flex" },
+              gap: 2,
+            }}
+          >
             <Button
               sx={{ fontSize: ".9rem", color: "text.primary" }}
               onClick={() => handleNavClick("about")}
@@ -53,7 +88,12 @@ function Header() {
               Education
             </Button>
           </Box>
-          <Box sx={{ display: "flex", gap: 2 }}>
+          <Box
+            sx={{
+              display: { xs: "none", md: "flex" },
+              gap: 2,
+            }}
+          >
             <Button
               sx={{ fontSize: ".9rem", color: "text.primary" }}
               onClick={() => handleNavClick("projects")}
@@ -68,6 +108,44 @@ function Header() {
             </Button>
           </Box>
         </Toolbar>
+        <Menu
+          anchorEl={menuAnchor}
+          open={Boolean(menuAnchor)}
+          onClose={() => setMenuAnchor(null)}
+          anchorOrigin={{
+            vertical: "bottom",
+            horizontal: "right",
+          }}
+          transformOrigin={{
+            vertical: "top",
+            horizontal: "right",
+          }}
+        >
+          {[
+            { label: "About me", id: "about" },
+            { label: "Skills", id: "skills" },
+            { label: "Education", id: "education" },
+            { label: "Projects", id: "projects" },
+            { label: "Contact me", id: "contact" },
+          ].map((item) => (
+            <MenuItem
+              key={item.id}
+              sx={{
+                my: -1,
+                fontSize: ".8rem",
+                bgcolor: "background.default",
+                py: 1.5,
+              }}
+              onClick={() => {
+                handleNavClick(item.id);
+                setMenuAnchor(null);
+              }}
+            >
+              {item.label}
+            </MenuItem>
+          ))}
+        </Menu>
+
         <Divider />
       </Box>
     </AppBar>

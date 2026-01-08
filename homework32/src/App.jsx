@@ -29,7 +29,7 @@ function App() {
             <Route path="/projects/:id" element={<Project />} />
           </Routes>
         </Layout>
-        <ThemeSwitcher value={themeName} onChange={setThemeName} />
+        <ThemeSwitcher value={themeName} setThemeName={setThemeName} />
       </BrowserRouter>
     </ThemeProvider>
   );

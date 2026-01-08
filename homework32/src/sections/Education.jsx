@@ -13,16 +13,9 @@ function Education() {
         sx={{
           backgroundColor: "background.section3",
           width: "100%",
+          scrollMarginTop: `${headerHeight - 64}px`,
         }}
       >
-        <Box
-          sx={{
-            position: "relative",
-            top: `-${headerHeight}px`,
-            height: 0,
-            scrollMarginTop: `${headerHeight}px`,
-          }}
-        />
         <Container
           maxWidth="md"
           sx={{
@@ -31,13 +24,13 @@ function Education() {
             flexDirection: "column",
             alignItems: "center",
             justifyContent: "center",
-            py: { xs: 8, md: 12 },
+            py: { xs: 10, md: 11 },
           }}
         >
           <Typography
             variant="h4"
             align="center"
-            sx={{ mb: 6, fontWeight: 600 }}
+            sx={{ mb: { md: 6, xs: 4 }, fontWeight: 600 }}
           >
             Education
           </Typography>

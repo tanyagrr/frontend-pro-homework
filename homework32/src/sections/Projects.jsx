@@ -21,30 +21,27 @@ function Projects() {
       component="section"
       id="projects"
       sx={{
+        backgroundColor: "background.section4",
         width: "100%",
-        bgcolor: "background.section4",
-        minHeight: `calc(100vh - ${headerHeight}px)`,
         scrollMarginTop: `${headerHeight}px`,
-        display: "flex",
-        alignItems: "center",
       }}
     >
-      <Box
-        id="projects-anchor"
-        sx={{
-          height: headerHeight,
-        }}
-      />
       <Container
-        maxWidth="lg"
+        maxWidth="md"
         sx={{
+          minHeight: `calc(100vh - ${headerHeight}px)`,
           display: "flex",
           flexDirection: "column",
           alignItems: "center",
-          pb: 1,
+          justifyContent: "center",
+          py: { xs: 5, md: 7 },
         }}
       >
-        <Typography variant="h4" align="center" sx={{ mb: 7, fontWeight: 600 }}>
+        <Typography
+          variant="h4"
+          align="center"
+          sx={{ mb: { md: 8, xs: 3 }, fontWeight: 600 }}
+        >
           Projects
         </Typography>
         <Grid container spacing={4} justifyContent="center">

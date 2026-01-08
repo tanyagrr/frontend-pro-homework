@@ -5,10 +5,16 @@ const skills = [
   "React",
   "HTML",
   "CSS",
+  "Git",
+  "Github",
+  "Tailwind",
   "Redux",
   "Redux ToolKit",
   "Redux-Thunk",
-  "Redux Saga",
+  "Redux-Saga",
+  "Express.js",
+  "REST API",
+  "Vitest",
   "Material UI",
 ];
 
@@ -38,8 +44,8 @@ function Skills() {
         </Typography>
         <Stack
           direction="row"
-          spacing={3}
-          rowGap={3}
+          spacing={{ xs: 1, sm: 2, md: 3 }}
+          rowGap={{ xs: 2, sm: 3 }}
           columnGap={1}
           flexWrap="wrap"
           justifyContent="center"

@@ -6,9 +6,14 @@ import ForestIcon from "@mui/icons-material/Forest";
 import { useState } from "react";
 import ThemeOptionButton from "./ThemeOptionButton";
 
-function ThemeSwitcher({ value, onChange }) {
+function ThemeSwitcher({ value, setThemeName }) {
   const [anchorEl, setAnchorEl] = useState(null);
   const open = Boolean(anchorEl);
+
+  const onChange = (theme) => {
+    setThemeName(theme);
+    setAnchorEl(null);
+  };
 
   return (
     <Box

@@ -45,9 +45,9 @@ function Project() {
         >
           Back to projects
         </Button>
-        <Grid container spacing={6} alignItems="center">
-          <Grid size={{ xs: 12, md: 7 }}>
-            <Stack spacing={3}>
+        <Grid container spacing={6} alignItems="flex-start">
+          <Grid size={{ xs: 12, md: 6 }}>
+            <Stack spacing={3} sx={{ mt: { xs: 2, md: 6 } }}>
               {project.screenshots.map((src, index) => (
                 <Box
                   key={index}
@@ -64,12 +64,18 @@ function Project() {
             </Stack>
           </Grid>
 
-          <Grid size={{ xs: 12, md: 5 }}>
-            <Typography variant="h2" sx={{ fontWeight: 600, mb: 2 }}>
+          <Grid size={{ xs: 12, md: 6 }}>
+            <Typography
+              variant="h2"
+              sx={{ fontWeight: 600, mb: 2, maxWidth: 520 }}
+            >
               {project.title}
             </Typography>
 
-            <Typography variant="body1" sx={{ lineHeight: 1.8, mb: 4 }}>
+            <Typography
+              variant="body1"
+              sx={{ lineHeight: 1.8, mb: 4, whiteSpace: "pre-line" }}
+            >
               {project.long}
             </Typography>
 
