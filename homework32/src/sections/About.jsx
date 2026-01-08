@@ -11,20 +11,21 @@ function About() {
         backgroundColor: "background.default",
         width: "100%",
         scrollMarginTop: `${headerHeight}px`,
-        minHeight: "100vh",
+        height: `calc(100svh - ${headerHeight}px)`,
       }}
     >
       <Container
         maxWidth="md"
         sx={{
-          minHeight: `calc(100vh - ${headerHeight}px)`,
+          height: "100%",
           display: "flex",
           flexDirection: "column",
-          justifyContent: "center",
+          justifyContent: { xs: "flex-start", md: "center" },
           alignItems: "center",
+          pt: { xs: 6, md: 0 },
         }}
       >
-        <Stack spacing={{ xs: 4, md: 5 }} sx={{ alignItems: "center" }}>
+        <Stack spacing={{ xs: 3, md: 5 }} sx={{ alignItems: "center" }}>
           <Typography
             variant="h1"
             align="center"
@@ -40,7 +41,7 @@ function About() {
             Tania Herasymenko
           </Typography>
           <Divider sx={{ width: { xs: "40%", sm: "50%", md: "60%" } }} />
-          <Stack spacing={{ xs: 2.5, md: 3 }}>
+          <Stack spacing={{ xs: 2, md: 3 }}>
             <Typography
               align="center"
               variant="body1"
