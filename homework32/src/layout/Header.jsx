@@ -77,7 +77,7 @@ function Header() {
             </Button>
             <Button
               sx={{ fontSize: ".9rem", color: "text.primary" }}
-              onClick={() => handleNavClick("skills", 190)}
+              onClick={() => handleNavClick("skills")}
             >
               Skills
             </Button>
@@ -132,7 +132,7 @@ function Header() {
               key={item.id}
               sx={{
                 my: -1,
-                fontSize: ".8rem",
+                fontSize: "1rem",
                 bgcolor: "background.default",
                 py: 1.5,
               }}
