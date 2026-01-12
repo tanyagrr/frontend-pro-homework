@@ -26,7 +26,7 @@ function Skills() {
       sx={{
         backgroundColor: "background.section2",
         width: "100%",
-        py: 8,
+        py: { xs: 8, md: 1 },
       }}
     >
       <Container

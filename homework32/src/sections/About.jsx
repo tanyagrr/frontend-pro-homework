@@ -41,7 +41,7 @@ function About() {
             Tania Herasymenko
           </Typography>
           <Divider sx={{ width: { xs: "40%", sm: "50%", md: "60%" } }} />
-          <Stack spacing={{ xs: 2, md: 3 }}>
+          <Stack spacing={{ xs: 2, md: 2 }}>
             <Typography
               align="center"
               variant="body1"
@@ -62,7 +62,7 @@ function About() {
               Prior to transitioning into frontend development, worked as a
               self-employed English tutor, interpreter, and museum guide. These
               roles strengthened communication skills, adaptability, attention
-              to detail, and the ability to explain complex ideas clearly —
+              to detail, and the ability to explain complex ideas clearly –
               skills that translate directly into writing maintainable code,
               collaborating with teams, and building user-friendly interfaces.
             </Typography>
