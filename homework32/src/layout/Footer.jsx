@@ -37,7 +37,7 @@ function Footer() {
             justifyContent="center"
           >
             <IconButton
-              href="tel:+380957062171"
+              href="tel:+380900000000"
               aria-label="Phone"
               color="inherit"
               sx={{ "&:hover": { color: "text.secondary" } }}
